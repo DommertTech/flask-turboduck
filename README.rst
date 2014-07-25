@@ -1,17 +1,17 @@
-flask-turboduck
+Flask-Turboduck
 ============
 
 Flask-Turboduck is a fork of Flask-PeeWee, but built with Zurb Foundation instead of Bootstrap.
 Flask-Turboduck provides a layer of integration between the `flask <http://flask.pocoo.org/>`_
 web framework and the `peewee orm <http://peewee.readthedocs.org/>`_.
 
-batteries included:
+Batteries Included:
 
-* admin interface
-* authentication
-* rest api
+* Admin Interface
+* Authentication
+* Rest API
 
-requirements:
+Requirements:
 
 * `flask <https://github.com/mitsuhiko/flask>`_
 * `peewee <https://github.com/coleifer/peewee>`_
@@ -23,12 +23,12 @@ requirements:
 check out the `documentation <http://flask-peewee.readthedocs.org/>`_.
 
 
-** Updating for Flask-Turboduck **
+* Updating for Flask-Turboduck *
 ------------------
 
 
 
-Admin interface
+Admin Interface
 ---------------
 
 influenced heavily by the `django <http://djangoproject.com>`_ admin, provides easy
@@ -74,7 +74,7 @@ a way to expose a RESTful interface for your project's models.
     }
 
 
-installing
+Installing
 ----------
 
 I recommend installing in a virtualenv.  to get started::
@@ -88,7 +88,7 @@ I recommend installing in a virtualenv.  to get started::
     pip install flask-peewee
 
 
-example app
+Example App
 -----------
 
 the project ships with an example app, which is a silly twitter clone.  to
