@@ -1,7 +1,8 @@
-flask-peewee
+flask-turboduck
 ============
 
-provides a layer of integration between the `flask <http://flask.pocoo.org/>`_ 
+Flask-Turboduck is a fork of Flask-PeeWee, but built with Zurb Foundation instead of Bootstrap.
+Flask-Turboduck provides a layer of integration between the `flask <http://flask.pocoo.org/>`_
 web framework and the `peewee orm <http://peewee.readthedocs.org/>`_.
 
 batteries included:
