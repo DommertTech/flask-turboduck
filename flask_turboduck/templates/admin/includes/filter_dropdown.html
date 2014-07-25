@@ -12,9 +12,10 @@
     {{ list_fields(child, prefix + [child_prefix]) }}
   {% endfor %}
 {% endmacro %}
-    <li class="dropdown" style="float:right">
-      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Add filter... <span class="caret" /></a>
-      <ul class="dropdown-menu pull-right" id="filters">
-        {{ list_fields(field_tree, []) }}
-      </ul>
-    </li>
+
+<div id="filter">
+  <a href="#" class="button" data-dropdown="drop">Add filter... &raquo;</a>
+   <ul id="drop" class="[tiny small medium large content]f-dropdown" data-dropdown-content>
+    <li> {{ list_fields(field_tree, []) }} </li>
+   </ul>
+</div>

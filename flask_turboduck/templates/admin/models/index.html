@@ -3,6 +3,7 @@
 {% block tab_index_class %}active{% endblock %}
 
 {% block extra_tabs %}
+
     <li class="dropdown" style="float:right">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">With selected... <span class="caret" /></a>
       <ul class="dropdown-menu pull-right">
@@ -13,12 +14,13 @@
     {% include "admin/includes/filter_dropdown.html" %}
 {% endblock %}
 
+
 {% block content %}
   {% include "admin/includes/filter_widgets.html" %}
-
+<section class="row" id="content">
   <form action="." class="form-horizontal" id="model-list" method="post"><input type="hidden" name="action" value="" />
   {% if csrf_token %}{# Support for flask-seasurf #}<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">{% endif %}
-  <table class="table table-bordered table-striped">
+  <table class="large-12 columns">
     <thead>
       <tr>
         <th class="check first shrink"><input type="checkbox" name="xxx" onchange="javascript:$('td input[type=checkbox]').attr('checked', this.checked);" /></th>
@@ -37,6 +39,7 @@
         <th class="last shrink"></th>
       </tr>
     </thead>
+
     <tbody>
     {% for object in query.get_list() %}
       <tr>
@@ -63,5 +66,6 @@
     </tbody>
   </table>
   </form>
+</section>
   {% include "admin/includes/pagination.html" %}
 {% endblock %}

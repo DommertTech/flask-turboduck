@@ -22,72 +22,89 @@
 
 {% block navbar %}
 <div class="row">
-<div class="large-12 columns">
-<nav class="top-bar" data-topbar="">
-<ul class="title-area">
-    <!-- Title Area -->
-    <li class="name">  <a class="brand" href="{{ url_for('admin.index') }}">{{ branding }}</a> </li>
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
-  </ul>
-<section class="top-bar-section">
-    <ul class="left">
-      <li class="has-dropdown not-click"><a href="#">Menu</a>
-        <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
-          <li class="active"><a href="{{ url_for('admin.index') }}">Dashboard</a></li>
-          <li><a href="/">View site</a></li>
-          <li><a href="#">Sub-item 2</a></li>
-          <li class="divider"></li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="right">
-      <li class="divider"></li>
-      <li><a href="#">Item 2</a></li>
-    </ul>
-</section>
-</nav>
+    <div class="large-12 columns">
+        <nav class="top-bar" data-topbar="">
+        <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">  <a class="brand" href="{{ url_for('admin.index') }}">{{ branding }}</a> </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
+          </ul>
+            <section class="top-bar-section">
+                <ul class="left">
+                  <li class="has-dropdown not-click"><a href="#">Menu</a>
+                    <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+                      <li class="active"><a href="{{ url_for('admin.index') }}">Dashboard</a></li>
+                      <li><a href="/">View site</a></li>
+                      <li><a href="#">Sub-item 2</a></li>
+                      <li class="divider"></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="right">
+                  <li class="divider"></li>
+                  <li><a href="#">Item 2</a></li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+</div>
 {% endblock %}
 
 
-   <div class="row">
-      <div class="large-4 columns">
-        <div class="well sidebar-nav">
-          <h3>Navigation</h3>
-          {% block sidebar %}
-            <ul id="nav" class="nav nav-list">
-              {% for iter_admin in model_admins %}
-                <li{% if model_admin == iter_admin %} class="active"{% endif %}><a href="{{ url_for(iter_admin.get_url_name('index')) }}">{{ iter_admin.get_admin_name()|fix_underscores }}</a></li>
-              {% endfor %}
-            </ul>
-          {% endblock %}
-        </div>
-      </div><!-- /sidebar -->
+<div class="row">
+  <div class="large-3 columns">
+    <div>
+      <h3>Navigation</h3>
+      {% block sidebar %}
+        <ul id="nav" class="side-nav">
+          {% for iter_admin in model_admins %}
+            <li{% if model_admin == iter_admin %} class="active"{% endif %}><a href="{{ url_for(iter_admin.get_url_name('index')) }}">{{ iter_admin.get_admin_name()|fix_underscores }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endblock %}
+    </div>
+  </div><!-- /sidebar -->
 
-      <div class="large-8 columns">
+    <div class="large-9 columns">
         <div class="content">
           <div class="page-header">
             <h1>{% block content_title %}{% endblock %} <small>{% block content_tagline %}{% endblock %}</small></h1>
           </div>
-          <ul class="breadcrumb">
+        </div>
+
+
+          <ul class="breadcrumbs">
             <li><a href="{{ url_for('admin.index') }}">Dashboard</a></li>
             {% block breadcrumbs %}{% endblock %}
           </ul>
+
           {% for category, message in get_flashed_messages(with_categories=true) %}
             <div class="alert-box success radius {{ category }}">
               <a class="close" data-dismiss="alert" href="#">×</a>
               <p>{{ message }}</p>
             </div>
           {% endfor %}
-          {% block pre_content %}{% endblock %}
+
+        <section class="row large-12 columns">
+        {% block pre_content %}{% endblock %}
+        </section>
+</div>
+
+</div>
+<div id="row">
+    <div id="large-12 columns">
           {% block content %}{% endblock %}
-        </div><!-- /content -->
-      </div><!-- /row -->
-      <hr />
-      <footer>
+        <!-- /content -->
+    </div>
+     <!-- /row -->
+</div>
+
+
+      <footer> <hr />
         <p>{% block footer %}Site administration{% endblock %}</p>
       </footer>
-  </div> <!-- /container-fluid -->
+   <!-- /container-fluid -->
         <script>
       $(document).foundation();
     </script>
