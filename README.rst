@@ -1,6 +1,7 @@
 Flask-Turboduck
 ============
 
+.. image: http://deathproofduck.com/media/catalog/product/cache/1/image/346x/9df78eab33525d08d6e5fb8d27136e95/n/i/nickle-duck_1.jpg
 Flask-Turboduck is a fork of Flask-PeeWee, but built with Zurb Foundation instead of Bootstrap.
 Flask-Turboduck provides a layer of integration between the `flask <http://flask.pocoo.org/>`_
 web framework and the `peewee orm <http://peewee.readthedocs.org/>`_.
