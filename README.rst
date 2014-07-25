@@ -23,7 +23,7 @@ Requirements:
 check out the `documentation <http://flask-peewee.readthedocs.org/>`_.
 
 
-* Updating for Flask-Turboduck *
+** Updating for Flask-Turboduck **
 ------------------
 
 
