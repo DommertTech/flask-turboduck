@@ -2,8 +2,8 @@ import datetime
 import operator
 
 from flask import request
-from flask_peewee.forms import BaseModelConverter
-from flask_peewee._compat import reduce
+from flask_turboduck.forms import BaseModelConverter
+from flask_turboduck._compat import reduce
 from peewee import *
 from wtforms import fields
 from wtforms import form

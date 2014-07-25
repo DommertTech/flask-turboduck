@@ -1,16 +1,16 @@
 import unittest
 
-from flask_peewee.tests import test_app
-from flask_peewee.tests.test_app import AModel
-from flask_peewee.tests.test_app import BDetails
-from flask_peewee.tests.test_app import BModel
-from flask_peewee.tests.test_app import CModel
-from flask_peewee.tests.test_app import DModel
-from flask_peewee.tests.test_app import EModel
-from flask_peewee.tests.test_app import FModel
-from flask_peewee.tests.test_app import Message
-from flask_peewee.tests.test_app import Note
-from flask_peewee.tests.test_app import User
+from flask_turboduck.tests import test_app
+from flask_turboduck.tests.test_app import AModel
+from flask_turboduck.tests.test_app import BDetails
+from flask_turboduck.tests.test_app import BModel
+from flask_turboduck.tests.test_app import CModel
+from flask_turboduck.tests.test_app import DModel
+from flask_turboduck.tests.test_app import EModel
+from flask_turboduck.tests.test_app import FModel
+from flask_turboduck.tests.test_app import Message
+from flask_turboduck.tests.test_app import Note
+from flask_turboduck.tests.test_app import User
 
 
 class FlaskPeeweeTestCase(unittest.TestCase):

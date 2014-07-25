@@ -1,8 +1,8 @@
 import peewee
 from peewee import *
 
-from flask_peewee.exceptions import ImproperlyConfigured
-from flask_peewee.utils import load_class
+from flask_turboduck.exceptions import ImproperlyConfigured
+from flask_turboduck.utils import load_class
 
 
 class Database(object):

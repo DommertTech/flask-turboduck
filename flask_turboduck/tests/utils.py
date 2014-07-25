@@ -8,14 +8,14 @@ import datetime
 from flask import request
 from werkzeug.exceptions import NotFound
 
-from flask_peewee.utils import check_password
-from flask_peewee.utils import get_object_or_404
-from flask_peewee.utils import make_password
-from flask_peewee.tests.base import FlaskPeeweeTestCase
-from flask_peewee.tests.test_app import Message
-from flask_peewee.tests.test_app import Note
-from flask_peewee.tests.test_app import User
-from flask_peewee.tests.test_app import app as flask_app
+from flask_turboduck.utils import check_password
+from flask_turboduck.utils import get_object_or_404
+from flask_turboduck.utils import make_password
+from flask_turboduck.tests.base import FlaskPeeweeTestCase
+from flask_turboduck.tests.test_app import Message
+from flask_turboduck.tests.test_app import Note
+from flask_turboduck.tests.test_app import User
+from flask_turboduck.tests.test_app import app as flask_app
 
 
 class UtilsTestCase(FlaskPeeweeTestCase):

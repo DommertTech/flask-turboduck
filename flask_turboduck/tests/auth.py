@@ -11,13 +11,13 @@ from flask import request
 from flask import session
 from flask import url_for
 
-from flask_peewee.auth import Auth
-from flask_peewee.auth import LoginForm
-from flask_peewee.tests.base import FlaskPeeweeTestCase
-from flask_peewee.tests.test_app import User
-from flask_peewee.tests.test_app import app
-from flask_peewee.tests.test_app import auth
-from flask_peewee.tests.test_app import db
+from flask_turboduck.auth import Auth
+from flask_turboduck.auth import LoginForm
+from flask_turboduck.tests.base import FlaskPeeweeTestCase
+from flask_turboduck.tests.test_app import User
+from flask_turboduck.tests.test_app import app
+from flask_turboduck.tests.test_app import auth
+from flask_turboduck.tests.test_app import db
 
 
 class TestAuth(Auth):

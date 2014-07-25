@@ -7,22 +7,22 @@ from flask import request
 from flask import session
 from flask import url_for
 
-from flask_peewee.admin import AdminPanel
-from flask_peewee.admin import ModelAdmin
-from flask_peewee.tests.base import FlaskPeeweeTestCase
-from flask_peewee.tests.test_app import AModel
-from flask_peewee.tests.test_app import BDetails
-from flask_peewee.tests.test_app import BModel
-from flask_peewee.tests.test_app import CModel
-from flask_peewee.tests.test_app import DModel
-from flask_peewee.tests.test_app import Message
-from flask_peewee.tests.test_app import Note
-from flask_peewee.tests.test_app import User
-from flask_peewee.tests.test_app import admin
-from flask_peewee.utils import check_password
-from flask_peewee.utils import get_next
-from flask_peewee.utils import make_password
-from flask_peewee._compat import text_type
+from flask_turboduck.admin import AdminPanel
+from flask_turboduck.admin import ModelAdmin
+from flask_turboduck.tests.base import FlaskPeeweeTestCase
+from flask_turboduck.tests.test_app import AModel
+from flask_turboduck.tests.test_app import BDetails
+from flask_turboduck.tests.test_app import BModel
+from flask_turboduck.tests.test_app import CModel
+from flask_turboduck.tests.test_app import DModel
+from flask_turboduck.tests.test_app import Message
+from flask_turboduck.tests.test_app import Note
+from flask_turboduck.tests.test_app import User
+from flask_turboduck.tests.test_app import admin
+from flask_turboduck.utils import check_password
+from flask_turboduck.utils import get_next
+from flask_turboduck.utils import make_password
+from flask_turboduck._compat import text_type
 
 from wtfpeewee.orm import model_form
 

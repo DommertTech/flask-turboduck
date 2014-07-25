@@ -16,9 +16,9 @@ from wtforms import PasswordField
 from wtforms import TextField
 from wtforms import validators
 
-from flask_peewee.utils import check_password
-from flask_peewee.utils import get_next
-from flask_peewee.utils import make_password
+from flask_turboduck.utils import check_password
+from flask_turboduck.utils import get_next
+from flask_turboduck.utils import make_password
 
 
 current_dir = os.path.dirname(__file__)
@@ -76,7 +76,7 @@ class Auth(object):
 
     def get_model_admin(self, model_admin=None):
         if model_admin is None:
-            from flask_peewee.admin import ModelAdmin
+            from flask_turboduck.admin import ModelAdmin
             model_admin = ModelAdmin
 
         class UserAdmin(model_admin):

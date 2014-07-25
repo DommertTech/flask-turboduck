@@ -11,24 +11,24 @@ import unittest
 
 from flask import g
 
-from flask_peewee.rest import Authentication
-from flask_peewee.rest import RestAPI
-from flask_peewee.rest import RestResource
-from flask_peewee.rest import UserAuthentication
-from flask_peewee.tests.base import FlaskPeeweeTestCase
-from flask_peewee.tests.test_app import AModel
-from flask_peewee.tests.test_app import APIKey
-from flask_peewee.tests.test_app import BModel
-from flask_peewee.tests.test_app import CModel
-from flask_peewee.tests.test_app import EModel
-from flask_peewee.tests.test_app import FModel
-from flask_peewee.tests.test_app import Message
-from flask_peewee.tests.test_app import Note
-from flask_peewee.tests.test_app import TestModel
-from flask_peewee.tests.test_app import User
-from flask_peewee.utils import check_password
-from flask_peewee.utils import get_next
-from flask_peewee.utils import make_password
+from flask_turboduck.rest import Authentication
+from flask_turboduck.rest import RestAPI
+from flask_turboduck.rest import RestResource
+from flask_turboduck.rest import UserAuthentication
+from flask_turboduck.tests.base import FlaskPeeweeTestCase
+from flask_turboduck.tests.test_app import AModel
+from flask_turboduck.tests.test_app import APIKey
+from flask_turboduck.tests.test_app import BModel
+from flask_turboduck.tests.test_app import CModel
+from flask_turboduck.tests.test_app import EModel
+from flask_turboduck.tests.test_app import FModel
+from flask_turboduck.tests.test_app import Message
+from flask_turboduck.tests.test_app import Note
+from flask_turboduck.tests.test_app import TestModel
+from flask_turboduck.tests.test_app import User
+from flask_turboduck.utils import check_password
+from flask_turboduck.utils import get_next
+from flask_turboduck.utils import make_password
 
 
 class RestApiTestCase(FlaskPeeweeTestCase):

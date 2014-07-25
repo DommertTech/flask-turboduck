@@ -12,23 +12,23 @@ from flask import url_for
 from peewee import *
 
 # flask-peewee bindings
-from flask_peewee.admin import Admin
-from flask_peewee.admin import AdminPanel
-from flask_peewee.admin import ModelAdmin
-from flask_peewee.auth import Auth
-from flask_peewee.auth import BaseUser
-from flask_peewee.db import Database
-from flask_peewee.filters import QueryFilter
-from flask_peewee.rest import APIKeyAuthentication
-from flask_peewee.rest import AdminAuthentication
-from flask_peewee.rest import Authentication
-from flask_peewee.rest import RestAPI
-from flask_peewee.rest import RestResource
-from flask_peewee.rest import RestrictOwnerResource
-from flask_peewee.rest import UserAuthentication
-from flask_peewee.utils import get_object_or_404
-from flask_peewee.utils import make_password
-from flask_peewee.utils import object_list
+from flask_turboduck.admin import Admin
+from flask_turboduck.admin import AdminPanel
+from flask_turboduck.admin import ModelAdmin
+from flask_turboduck.auth import Auth
+from flask_turboduck.auth import BaseUser
+from flask_turboduck.db import Database
+from flask_turboduck.filters import QueryFilter
+from flask_turboduck.rest import APIKeyAuthentication
+from flask_turboduck.rest import AdminAuthentication
+from flask_turboduck.rest import Authentication
+from flask_turboduck.rest import RestAPI
+from flask_turboduck.rest import RestResource
+from flask_turboduck.rest import RestrictOwnerResource
+from flask_turboduck.rest import UserAuthentication
+from flask_turboduck.utils import get_object_or_404
+from flask_turboduck.utils import make_password
+from flask_turboduck.utils import object_list
 
 
 class TestFlask(Flask):
@@ -39,7 +39,7 @@ class TestFlask(Flask):
 
 
 app = TestFlask(__name__)
-app.config.from_object('flask_peewee.tests.test_config.Configuration')
+app.config.from_object('flask_turboduck.tests.test_config.Configuration')
 
 db = Database(app)
 

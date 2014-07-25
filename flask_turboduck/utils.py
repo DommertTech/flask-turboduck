@@ -12,7 +12,7 @@ from peewee import ForeignKeyField
 from peewee import Model
 from peewee import SelectQuery
 
-from flask_peewee._compat import text_type
+from flask_turboduck._compat import text_type
 
 
 def get_object_or_404(query_or_model, *query):

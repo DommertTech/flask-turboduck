@@ -16,13 +16,13 @@ from flask import url_for
 from peewee import *
 from peewee import DJANGO_MAP
 
-from flask_peewee.filters import make_field_tree
-from flask_peewee.serializer import Deserializer
-from flask_peewee.serializer import Serializer
-from flask_peewee.utils import PaginatedQuery
-from flask_peewee.utils import get_object_or_404
-from flask_peewee.utils import slugify
-from flask_peewee._compat import reduce
+from flask_turboduck.filters import make_field_tree
+from flask_turboduck.serializer import Deserializer
+from flask_turboduck.serializer import Serializer
+from flask_turboduck.utils import PaginatedQuery
+from flask_turboduck.utils import get_object_or_404
+from flask_turboduck.utils import slugify
+from flask_turboduck._compat import reduce
 
 
 class Authentication(object):
