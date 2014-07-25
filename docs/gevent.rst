@@ -9,14 +9,14 @@ settings you will need to add.
 Database configuration
 ----------------------
 
-Instruct peewee to store connection information in a thread local:
+Instruct turboduck to store connection information in a thread local:
 
 .. code-block:: python
 
     # app configuration
     DATABASE = {
         'name': 'my_db',
-        'engine': 'peewee.PostgresqlDatabase',
+        'engine': 'turboduck.PostgresqlDatabase',
         'user': 'postgres',
         'threadlocals': True, # <-- this
     }
@@ -45,10 +45,10 @@ If you want to patch everything (recommended):
 Rationale
 ---------
 
-flask-peewee opens a connection-per-request.  Flask stores things, like "per-request"
+flask-turboduck opens a connection-per-request.  Flask stores things, like "per-request"
 information, in a special object called a `context local <http://flask.pocoo.org/docs/reqcontext/>`_.
-Flask will ensure that this works even in a greened environment.  Peewee does not
+Flask will ensure that this works even in a greened environment.  turboduck does not
 automatically work in a "greened" environment, and stores connection state on the
-database instance in a local.  Peewee can use a thread local instead, which ensures
-connections are not shared across threads.  When using peewee with gevent, it is
+database instance in a local.  turboduck can use a thread local instead, which ensures
+connections are not shared across threads.  When using turboduck with gevent, it is
 necessary to make this "threadlocal" a "greenlet local" by monkeypatching the thread module.

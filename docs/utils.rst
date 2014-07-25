@@ -3,7 +3,7 @@
 Utilities
 =========
 
-flask-peewee ships with several useful utilities.  If you're coming from the
+flask-turboduck ships with several useful utilities.  If you're coming from the
 django world, some of these functions may look familiar to you.
 
 
@@ -78,7 +78,7 @@ Misc
 
     .. code-block:: python
     
-        from flask_peewee.utils import slugify
+        from flask_turboduck.utils import slugify
         
         
         class Blog(db.Model):

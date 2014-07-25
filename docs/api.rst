@@ -24,9 +24,9 @@ Admin
 
         from flask import Flask
 
-        from flask_peewee.admin import Admin
-        from flask_peewee.auth import Auth
-        from flask_peewee.db import Database
+        from flask_turboduck.admin import Admin
+        from flask_turboduck.auth import Auth
+        from flask_turboduck.db import Database
 
         app = Flask(__name__)
         db = Database(app)
@@ -64,7 +64,7 @@ Admin
 
         .. warning:: All models must be registered before calling :py:meth:`~Admin.setup`
 
-        :param model: peewee model to expose via the admin
+        :param model: turboduck model to expose via the admin
         :param admin_class: :py:class:`ModelAdmin` or subclass to use with given model
 
     .. py:method:: register_panel(title, panel)
@@ -96,7 +96,7 @@ Admin
         Flask application.  Use this method when you have finished registering
         all the models and panels with the admin object, but before starting
         the WSGI application.  For a sample implementation, check out ``example/main.py``
-        in the example application supplied with flask-peewee.
+        in the example application supplied with flask-turboduck.
 
         .. code-block:: python
 
@@ -165,7 +165,7 @@ Exposing Models with the ModelAdmin
 
 .. py:class:: ModelAdmin
 
-    Class that determines how a peewee ``Model`` is exposed in the admin area.  Provides
+    Class that determines how a turboduck ``Model`` is exposed in the admin area.  Provides
     a way of encapsulating model-specific configuration and behaviors.  Provided
     when registering a model with the :py:class:`Admin` instance (see :py:meth:`Admin.register`).
 
@@ -267,7 +267,7 @@ Exposing Models with the ModelAdmin
         fields or custom validation behavior.
 
         :param boolean adding: indicates whether adding a new instance or editing existing
-        :rtype: A `wtf-peewee <http://github.com/coleifer/wtf-peewee>`_ Form subclass that
+        :rtype: A `wtf-turboduck <http://github.com/coleifer/wtf-turboduck>`_ Form subclass that
                 will be used when adding or editing model instances in the admin.
 
     .. py:method:: get_add_form()
@@ -452,8 +452,8 @@ Auth
 
         from flask import Flask
 
-        from flask_peewee.auth import Auth
-        from flask_peewee.db import Database
+        from flask_turboduck.auth import Auth
+        from flask_turboduck.db import Database
 
         app = Flask(__name__)
         db = Database(app)
@@ -521,7 +521,7 @@ Auth
 
     .. py:method:: get_user_model()
 
-        :rtype: Peewee model to use for persisting user data and authentication
+        :rtype: turboduck model to use for persisting user data and authentication
 
     .. py:method:: get_model_admin([model_admin=None])
 
@@ -623,7 +623,7 @@ Database
 
 .. py:class:: Database(app)
 
-    The database wrapper provides integration between the peewee ORM and flask.
+    The database wrapper provides integration between the turboduck ORM and flask.
     It reads database configuration information from the flask app configuration
     and manages connections across requests.
 
@@ -636,7 +636,7 @@ Database
 
         DATABASE = {
             'name': 'example.db',
-            'engine': 'peewee.SqliteDatabase',
+            'engine': 'turboduck.SqliteDatabase',
         }
 
     Here is an example of how you might use the database wrapper:
@@ -672,7 +672,7 @@ REST API
 
     .. code-block:: python
 
-        from flask_peewee.rest import RestAPI
+        from flask_turboduck.rest import RestAPI
 
         from app import app # our project's Flask app
 
@@ -714,7 +714,7 @@ RESTful Resources and their subclasses
 
 .. py:class:: RestResource(rest_api, model, authentication[, allowed_methods=None])
 
-    Class that determines how a peewee ``Model`` is exposed by the Rest API.  Provides
+    Class that determines how a turboduck ``Model`` is exposed by the Rest API.  Provides
     a way of encapsulating model-specific configuration and behaviors.  Provided
     when registering a model with the :py:class:`RestAPI` instance (see :py:meth:`RestAPI.register`).
 
@@ -779,7 +779,7 @@ RESTful Resources and their subclasses
 
             /* messages without "include_resources" */
             {
-              "content": "flask and peewee, together at last!",
+              "content": "flask and turboduck, together at last!",
               "pub_date": "2011-09-16 18:36:15",
               "id": 1,
               "user": 2
@@ -787,7 +787,7 @@ RESTful Resources and their subclasses
 
             /* messages with "include_resources = {'user': UserResource} */
             {
-              "content": "flask and peewee, together at last!",
+              "content": "flask and turboduck, together at last!",
               "pub_date": "2011-09-16 18:36:15",
               "id": 1,
               "user": {
@@ -974,7 +974,7 @@ Authenticating requests to the API
 
         from auth import auth # import the Auth object used by our project
 
-        from flask_peewee.rest import RestAPI, RestResource, UserAuthentication
+        from flask_turboduck.rest import RestAPI, RestResource, UserAuthentication
 
         # create an instance of UserAuthentication
         user_auth = UserAuthentication(auth)
@@ -1024,7 +1024,7 @@ Authenticating requests to the API
 
         from auth import auth # import the Auth object used by our project
 
-        from flask_peewee.rest import RestAPI, RestResource, UserAuthentication, AdminAuthentication
+        from flask_turboduck.rest import RestAPI, RestResource, UserAuthentication, AdminAuthentication
 
         # create an instance of UserAuthentication and AdminAuthentication
         user_auth = UserAuthentication(auth)

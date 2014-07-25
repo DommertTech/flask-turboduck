@@ -72,17 +72,17 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/flask-peewee.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/flask-turboduck.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/flask-peewee.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/flask-turboduck.qhc"
 
 devhelp:
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/flask-peewee"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/flask-peewee"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/flask-turboduck"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/flask-turboduck"
 	@echo "# devhelp"
 
 epub:

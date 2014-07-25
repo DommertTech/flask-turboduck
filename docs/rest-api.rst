@@ -3,7 +3,7 @@
 REST Api
 ========
 
-flask-peewee comes with some tools for exposing your project's models via a
+flask-turboduck comes with some tools for exposing your project's models via a
 RESTful API.  There are several components to the ``rest`` module, but the basic
 setup is to create an instance of :py:class:`RestAPI` and then register your
 project's models with subclasses of :py:class:`RestResource`.
@@ -44,7 +44,7 @@ we will expose via the API.  Here is a truncated version of what they look like:
 
 .. code-block:: python
 
-    from flask_peewee.auth import BaseUser
+    from flask_turboduck.auth import BaseUser
 
     class User(db.Model, BaseUser):
         username = CharField()
@@ -74,7 +74,7 @@ Here we'll create a simple api and register our models:
 
 .. code-block:: python
 
-    from flask_peewee.rest import RestAPI
+    from flask_turboduck.rest import RestAPI
     
     from app import app # our project's Flask app
     
@@ -103,7 +103,7 @@ Now if we hit our project at ``/api/message/`` we should get something like the 
       }, 
       "objects": [
         {
-          "content": "flask and peewee, together at last!", 
+          "content": "flask and turboduck, together at last!", 
           "pub_date": "2011-09-16 18:36:15", 
           "user_id": 1, 
           "id": 1
@@ -123,7 +123,7 @@ just the details on that object:
 .. code-block:: javascript
 
     {
-      content: "flask and peewee, together at last!"
+      content: "flask and turboduck, together at last!"
       pub_date: "2011-09-16 18:36:15"
       user_id: 1
       id: 1
@@ -173,7 +173,7 @@ from serialization, subclass :py:class:`RestResource`:
 
 .. code-block:: python
 
-    from flask_peewee.rest import RestAPI, RestResource
+    from flask_turboduck.rest import RestAPI, RestResource
     
     from app import app # our project's Flask app
     
@@ -224,7 +224,7 @@ mechanism.
 
     from auth import auth # import the Auth object used by our project
     
-    from flask_peewee.rest import RestAPI, RestResource, UserAuthentication
+    from flask_turboduck.rest import RestAPI, RestResource, UserAuthentication
     
     # create an instance of UserAuthentication
     user_auth = UserAuthentication(auth)
@@ -305,13 +305,13 @@ message is assigned to them.
 Restricting API access on a per-model basis
 -------------------------------------------
 
-flask-peewee comes with a special subclass of :py:class:`RestResource` that
+flask-turboduck comes with a special subclass of :py:class:`RestResource` that
 restricts POST/PUT/DELETE requests to prevent users from modifying another user's
 content.
 
 .. code-block:: python
 
-    from flask_peewee.rest import RestrictOwnerResource
+    from flask_turboduck.rest import RestrictOwnerResource
 
 
     class MessageResource(RestrictOwnerResource):
@@ -337,7 +337,7 @@ It is fine to modify our own message, though (message with id=1):
     
     # prints 200
 
-Under-the-hood, the `implementation <https://github.com/coleifer/flask-peewee/blob/master/flask_peewee/rest.py#L284>`_ of the :py:class:`RestrictOwnerResource` is pretty simple.
+Under-the-hood, the `implementation <https://github.com/coleifer/flask-turboduck/blob/master/flask_turboduck/rest.py#L284>`_ of the :py:class:`RestrictOwnerResource` is pretty simple.
 
 * PUT / DELETE -- verify the authenticated user is the owner of the object
 * POST -- assign the authenticated user as the owner of the new object
@@ -352,7 +352,7 @@ to administrators:
 
 .. code-block:: python
 
-    from flask_peewee.rest import AdminAuthentication
+    from flask_turboduck.rest import AdminAuthentication
     
     # instantiate our user-based auth
     user_auth = UserAuthentication(auth)
@@ -371,7 +371,7 @@ Filtering records and querying
 ------------------------------
 
 A REST Api is not very useful if it cannot be queried in a meaningful fashion.  To
-this end, the flask-peewee :py:class:`RestResource` objects support "django-style"
+this end, the flask-turboduck :py:class:`RestResource` objects support "django-style"
 filtering:
 
 .. code-block:: console
@@ -416,7 +416,7 @@ Joins can be traversed using the django double-underscore notation:
       }, 
       "objects": [
         {
-          "content": "flask and peewee, together at last!", 
+          "content": "flask and turboduck, together at last!", 
           "pub_date": "2011-09-16 18:36:15", 
           "user_id": 1, 
           "id": 1

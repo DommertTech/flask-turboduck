@@ -8,18 +8,18 @@ further ado, let's get started.
 
 .. note::
     Hopefully you have some familiarity with the `flask framework <http://flask.pocoo.org/>`_ and
-    the `peewee orm <http://peewee.rtfd.org/>`_, but if not those links
+    the `turboduck orm <http://turboduck.rtfd.org/>`_, but if not those links
     should help you get started.
 
 .. note::
-    For a complete example project, check the `example app <https://github.com/coleifer/flask-peewee/tree/master/example>`_
-    that ships with flask-peewee.
+    For a complete example project, check the `example app <https://github.com/coleifer/flask-turboduck/tree/master/example>`_
+    that ships with flask-turboduck.
 
 
 Creating a flask app
 --------------------
 
-First, be sure you have :ref:`installed flask-peewee and its dependencies <installation>`.
+First, be sure you have :ref:`installed flask-turboduck and its dependencies <installation>`.
 You can verify by running the test suite: ``python setup.py test``.
 
 After ensuring things are installed, open a new file called "app.py" and enter the
@@ -52,19 +52,19 @@ Creating a simple model
 -----------------------
 
 Let's add a simple model.  Before we can do that, though, it is necessary to
-initialize the peewee database wrapper and configure the database:
+initialize the turboduck database wrapper and configure the database:
 
 .. code-block:: python
 
     from flask import Flask
 
-    # flask-peewee bindings
-    from flask_peewee.db import Database
+    # flask-turboduck bindings
+    from flask_turboduck.db import Database
 
     # configure our database
     DATABASE = {
         'name': 'example.db',
-        'engine': 'peewee.SqliteDatabase',
+        'engine': 'turboduck.SqliteDatabase',
     }
     DEBUG = True
     SECRET_KEY = 'ssshhhh'
@@ -89,7 +89,7 @@ Now we can create a model:
 .. code-block:: python
 
     import datetime
-    from peewee import *
+    from turboduck import *
 
 
     class Note(db.Model):
@@ -99,7 +99,7 @@ Now we can create a model:
 
 .. note::
     The model we created, ``Note``, subclasses ``db.Model``, which in turn is a subclass
-    of ``peewee.Model`` that is pre-configured to talk to our database.
+    of ``turboduck.Model`` that is pre-configured to talk to our database.
 
 
 Setting up a simple base template
@@ -131,7 +131,7 @@ among other things, and is required by the :py:class:`Admin`.
 
 .. code-block:: python
 
-    from flask_peewee.auth import Auth
+    from flask_turboduck.auth import Auth
 
     # create an Auth object for use with our flask app and database wrapper
     auth = Auth(app, db)
@@ -153,14 +153,14 @@ After cleaning up the imports and declarations, we have something like the follo
 
     import datetime
     from flask import Flask
-    from flask_peewee.auth import Auth
-    from flask_peewee.db import Database
-    from peewee import *
+    from flask_turboduck.auth import Auth
+    from flask_turboduck.db import Database
+    from turboduck import *
 
     # configure our database
     DATABASE = {
         'name': 'example.db',
-        'engine': 'peewee.SqliteDatabase',
+        'engine': 'turboduck.SqliteDatabase',
     }
     DEBUG = True
     SECRET_KEY = 'ssshhhh'
@@ -196,7 +196,7 @@ the initialization of the ``Auth`` class:
 
 .. code-block:: python
 
-    from flask_peewee.admin import Admin
+    from flask_turboduck.admin import Admin
 
     admin = Admin(app, auth)
     admin.register(Note)
@@ -235,7 +235,7 @@ the following changes:
 
 .. code-block:: python
 
-    from flask_peewee.admin import Admin, ModelAdmin
+    from flask_turboduck.admin import Admin, ModelAdmin
 
     class NoteAdmin(ModelAdmin):
         columns = ('message', 'created',)
@@ -271,7 +271,7 @@ The first step, then, is to create the :py:class:`RestAPI` object:
 
 .. code-block:: python
 
-    from flask_peewee.rest import RestAPI
+    from flask_turboduck.rest import RestAPI
 
     # create a RestAPI container
     api = RestAPI(app)
@@ -354,7 +354,7 @@ auth credentials match those of one of the ``auth.User`` models.
 
 .. code-block:: python
 
-    from flask_peewee.rest import RestAPI, UserAuthentication
+    from flask_turboduck.rest import RestAPI, UserAuthentication
 
     # instantiate the user auth
     user_auth = UserAuthentication(auth)
