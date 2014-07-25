@@ -31,8 +31,8 @@ an :py:class:`Auth` backend for your project:
 
     from flask import Flask
     
-    from flask_peewee.auth import Auth
-    from flask_peewee.db import Database
+    from flask_turboduck.auth import Auth
+    from flask_turboduck.db import Database
     
     app = Flask(__name__)
     db = Database(app)
@@ -112,7 +112,7 @@ Here's a simple example of extending the auth system to use a custom user model:
 
 .. code-block:: python
 
-    from flask_peewee.auth import BaseUser # <-- implements set_password and check_password
+    from flask_turboduck.auth import BaseUser # <-- implements set_password and check_password
 
     app = Flask(__name__)
     db = Database(app)

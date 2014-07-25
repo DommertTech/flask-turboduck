@@ -4,7 +4,7 @@ Admin Interface
 ===============
 
 Many web applications ship with an "admin area", where priveleged users can
-view and modify content.  By introspecting your application's models, flask-peewee
+view and modify content.  By introspecting your application's models, flask-turboduck
 can provide you with straightforward, easily-extensible forms for managing your
 application content.
 
@@ -23,8 +23,8 @@ To get started with the admin, there are just a couple steps:
 
         from flask import Flask
 
-        from flask_peewee.auth import Auth
-        from flask_peewee.db import Database
+        from flask_turboduck.auth import Auth
+        from flask_turboduck.db import Database
 
         app = Flask(__name__)
         db = Database(app)
@@ -38,7 +38,7 @@ To get started with the admin, there are just a couple steps:
     .. code-block:: python
 
         # continued from above...
-        from flask_peewee.admin import Admin
+        from flask_turboduck.admin import Admin
 
         admin = Admin(app, auth)
 
@@ -69,7 +69,7 @@ To get started with the admin, there are just a couple steps:
 Customizing how models are displayed
 ------------------------------------
 
-We'll use the "Message" model taken from the `example app <https://github.com/coleifer/flask-peewee/tree/master/example>`_,
+We'll use the "Message" model taken from the `example app <https://github.com/coleifer/flask-turboduck/tree/master/example>`_,
 which looks like this:
 
 .. code-block:: python
@@ -100,7 +100,7 @@ admin, we'll subclass :py:class:`ModelAdmin`.
 
 .. code-block:: python
 
-    from flask_peewee.admin import ModelAdmin
+    from flask_turboduck.admin import ModelAdmin
 
     class MessageAdmin(ModelAdmin):
         columns = ('user', 'content', 'pub_date',)
@@ -179,7 +179,7 @@ Setting this up is very easy:
         columns = ('user', 'content', 'pub_date',)
         foreign_key_lookups = {'user': 'username'}
 
-When flask-peewee sees the ``foreign_key_lookups`` it will use the special modal
+When flask-turboduck sees the ``foreign_key_lookups`` it will use the special modal
 window to select instances.  This applies to both filters and model forms:
 
 Filters
@@ -224,7 +224,7 @@ Some example use-cases for AdminPanels might be:
   for example a mailing-list app.
 * Control global site settings, turn on and off features, etc.
 
-Referring to the `example app <https://github.com/coleifer/flask-peewee/tree/master/example>`_,
+Referring to the `example app <https://github.com/coleifer/flask-turboduck/tree/master/example>`_,
 we'll look at a simple panel that allows administrators to leave "notes" in the admin area:
 
 .. image:: fp-note-panel.jpg
@@ -287,7 +287,7 @@ Handling File Uploads
 ---------------------
 
 Flask and wtforms both provide support for handling file uploads (on the server
-and generating form fields).  Peewee, however, does not have a "file field" --
+and generating form fields).  turboduck, however, does not have a "file field" --
 generally I store a path to a file on disk and thus use a ``CharField`` for
 the storage.
 
@@ -301,7 +301,7 @@ file uploads.
     import os
 
     from flask import Markup
-    from peewee import *
+    from turboduck import *
     from werkzeug import secure_filename
 
     from app import app, db
@@ -329,7 +329,7 @@ file uploads.
 
     # admin.py
     from flask import request
-    from flask_peewee.admin import Admin, ModelAdmin
+    from flask_turboduck.admin import Admin, ModelAdmin
     from wtforms.fields import FileField, HiddenField
     from wtforms.form import Form
 

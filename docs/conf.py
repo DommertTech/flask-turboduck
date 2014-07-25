@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# flask-peewee documentation build configuration file, created by
+# flask-turboduck documentation build configuration file, created by
 # sphinx-quickstart on Tue Sep 20 13:19:30 2011.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'flask-peewee'
+project = u'flask-turboduck'
 copyright = u'2011, charles leifer'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -94,7 +94,7 @@ pygments_style = 'sphinx'
 html_theme = 'flask'
 
 html_theme_options = {
-    'index_logo': 'peewee.jpg',
+    'index_logo': 'turboduck.jpg',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -163,7 +163,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'flask-peeweedoc'
+htmlhelp_basename = 'flask-turboduckdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -177,7 +177,7 @@ htmlhelp_basename = 'flask-peeweedoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'flask-peewee.tex', u'flask-peewee Documentation',
+  ('index', 'flask-turboduck.tex', u'flask-turboduck Documentation',
    u'charles leifer', 'manual'),
 ]
 
@@ -210,6 +210,6 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'flask-peewee', u'flask-peewee Documentation',
+    ('index', 'flask-turboduck', u'flask-turboduck Documentation',
      [u'charles leifer'], 1)
 ]

@@ -3,19 +3,19 @@
 Installing
 ==========
 
-flask-peewee can be installed very easily using `pip <http://www.pip-installer.org/en/latest/index.html>`_.
+flask-turboduck can be installed very easily using `pip <http://www.pip-installer.org/en/latest/index.html>`_.
 
 .. code-block:: shell
 
-    pip install flask-peewee
+    pip install flask-turboduck
 
 If you do not have the dependencies installed already, pip will install them
 for you, but for reference they are:
 
 * `flask <https://github.com/mitsuhiko/flask>`_
-* `peewee <https://github.com/coleifer/peewee>`_
+* `turboduck <https://github.com/coleifer/turboduck>`_
 * `wtforms <https://bitbucket.org/simplecodes/wtforms>`_
-* `wtf-peewee <https://github.com/coleifer/wtf-peewee>`_
+* `wtf-turboduck <https://github.com/coleifer/wtf-turboduck>`_
 * python 2.5 or greater
 
 
@@ -27,8 +27,8 @@ and install by hand.
 
 .. code-block:: shell
 
-    git clone https://github.com/coleifer/flask-peewee.git
-    cd flask-peewee
+    git clone https://github.com/coleifer/flask-turboduck.git
+    cd flask-turboduck
     python setup.py install
 
 You can run the tests using the test-runner::
