@@ -2,5 +2,5 @@ include LICENSE
 include README.rst
 recursive-include docs *
 recursive-include example *
-recursive-include flask_peewee *
+recursive-include flask_turboduck *
 prune docs/_build

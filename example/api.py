@@ -1,4 +1,4 @@
-from flask_peewee.rest import RestAPI, RestResource, UserAuthentication, AdminAuthentication, RestrictOwnerResource
+from flask_turboduck.rest import RestAPI, RestResource, UserAuthentication, AdminAuthentication, RestrictOwnerResource
 
 from app import app
 from auth import auth

@@ -1,7 +1,7 @@
 from flask import Flask
 
 # flask-peewee bindings
-from flask_peewee.db import Database
+from flask_turboduck.db import Database
 
 
 app = Flask(__name__)

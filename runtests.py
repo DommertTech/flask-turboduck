@@ -3,7 +3,7 @@ import os
 import sys
 import unittest
 
-from flask_peewee import tests
+from flask_turboduck import tests
 
 def runtests(*test_args):
     suite = unittest.TestLoader().loadTestsFromModule(tests)

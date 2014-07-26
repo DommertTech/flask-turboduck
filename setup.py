@@ -15,7 +15,7 @@ setup(
     description='Peewee integration for flask',
     packages=find_packages(),
     package_data = {
-        'flask_peewee': [
+        'flask_turboduck': [
             'static/*/*.css',
             'static/*/*.js',
             'static/*/*.gif',
