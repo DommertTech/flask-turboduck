@@ -4,21 +4,20 @@
 
 {% block content_title %}Admin Dashboard{% endblock %}
 
-{% block content %}
+{% block panels %}
   {% if panels %}
-      <div class="row">
-        <div class="large-12 columns">
+      
         {% for panel in panels %}
           {{ panel.render()|safe() }}
         {% endfor %}
-        </div>
-      </div>
+
   {% endif %}
+{% endblock %}
 
-<div class="row">
-    <div class="large-12 columns">
 
-   <table id="table table-bordered table-striped">
+{% block content %}
+
+  <table class="large-12 columns" id="tableblock">
     <thead>
       <tr>
         <th class="shrink model-name" width="150">Model name</th>
@@ -26,7 +25,6 @@
         <th class="shrink controls" width="150"></th>
       </tr>
     </thead>
-
     <tbody>
       {% for iter_admin in model_admins %}
         <tr class="link">
@@ -40,9 +38,7 @@
           </td>
         </tr>
       {% endfor %}
-     </tbody>
+    </tbody>
   </table>
 
-    </div>
- </div>
 {% endblock %}

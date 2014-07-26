@@ -43,7 +43,7 @@
     <tbody>
     {% for object in query.get_list() %}
       <tr>
-        <td class="check"><input type="checkbox" name="id" value="{{ object.get_id() }}" /></td>
+        <td><input type="checkbox" name="id" value="{{ object.get_id() }}" /></td>
         {% if model_admin.columns %}
           {% for column in model_admin.columns %}
             {% if loop.index == 1 %}
