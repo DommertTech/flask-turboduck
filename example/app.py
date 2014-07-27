@@ -1,6 +1,6 @@
 from flask import Flask
 
-# flask-peewee bindings
+# flask-turboduck bindings
 from flask_turboduck.db import Database
 
 
