@@ -27,25 +27,29 @@
         <nav class="top-bar" data-topbar="">
           <ul class="title-area">
             <!-- Title Area -->
-            <li class="name">  <a href="{{ url_for('admin.index') }}">{{ branding }}</a> </li>
-            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-            <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
+            <li class="name"> <h1> <a href="{{ url_for('admin.index') }}">{{ branding }}</a></h1> </li>
+              <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
           </ul>
           <section class="top-bar-section">
               <ul class="left">
-                <li class="has-dropdown not-click"><a href="#">Menu</a>
+                  <li class="active"><a href="{{ url_for('admin.index') }}">Dashboard</a></li>
+                  <li class="has-dropdown not-click"><a href="#">Menu</a>
                   <ul class="dropdown">
-                    <li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
-                    <li class="active"><a href="{{ url_for('admin.index') }}">Dashboard</a></li>
-                    <li><a href="/">View site</a></li>
+                    <li class="active"><a href="#">SubMenu</a></li>
+                    <li><a href="#">SubMenu</a></li>
                     <li class="divider"></li>
+                    <li><a href="#">SubMenu</a></li>
                   </ul>
                 </li>
               </ul>
               <ul class="right">
                 <li class="divider"></li>
-                <li><a href="#">Item 2</a></li>
+                <li><a href="/">View site</a></li>
+                <li><a href="/accounts/logout/">Log Out</a></li>
               </ul>
+
+
           </section>
         </nav>
     </div>
