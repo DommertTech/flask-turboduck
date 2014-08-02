@@ -28,7 +28,7 @@ check out the `documentation <http://flask-turboduck.readthedocs.org/>`_.
 ** Updating for Flask-Turboduck **
 ------------------
 
-Forked from Flask-PeeWee@V.0.6.5.
+Forked from Flask-PeeWee @ V.0.6.5.
 
 Admin Interface
 ---------------
