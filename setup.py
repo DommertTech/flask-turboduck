@@ -6,7 +6,7 @@ if sys.version_info[:2] < (2, 6):
     requirements.append('simplejson')
 
 setup(
-    name='flask-peewee',
+    name='flask-turboduck',
     version='0.6.5',
     url='http://github.com/dommert/flask-turboduck/',
     license='BSD',
