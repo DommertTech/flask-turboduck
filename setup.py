@@ -8,11 +8,11 @@ if sys.version_info[:2] < (2, 6):
 setup(
     name='flask-peewee',
     version='0.6.5',
-    url='http://github.com/coleifer/flask-peewee/',
+    url='http://github.com/dommert/flask-turboduck/',
     license='BSD',
-    author='Charles Leifer',
-    author_email='coleifer@gmail.com',
-    description='Peewee integration for flask',
+    author='Jessie Dommert',
+    author_email='dommert@gmail.com',
+    description='Peewee integration for Flask',
     packages=find_packages(),
     package_data = {
         'flask_turboduck': [
