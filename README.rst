@@ -1,7 +1,8 @@
 Flask-Turboduck (Version 0.6.6)
 ============
 
-Authors 
+Authors:
+
 * Dommert (Dommert@Gmail.com)
 * Coleifer (https://github.com/coleifer)
 
