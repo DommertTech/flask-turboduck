@@ -514,7 +514,7 @@ class AdminTemplateHelper(object):
 
 class Admin(object):
     def __init__(self, app, auth, template_helper=AdminTemplateHelper,
-                 prefix='/admin', name='admin', branding='flask-peewee'):
+                 prefix='/admin', name='admin', branding='flask-turboduck'):
         self.app = app
         self.auth = auth
 

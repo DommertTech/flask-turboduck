@@ -1,15 +1,24 @@
-Flask-Turboduck
+Flask-Turboduck (Version 0.6.6)
 ============
+
+Authors:
+
+* Dommert (Dommert@Gmail.com)
+* Coleifer (https://github.com/coleifer)
+* David (David@Allstruck.com)
+
+
+
 
 .. image:: http://deathproofduck.com/media/catalog/product/cache/1/image/346x/9df78eab33525d08d6e5fb8d27136e95/n/i/nickle-duck_1.jpg
 
-Flask-Turboduck is a fork of Flask-PeeWee, but built with Zurb Foundation instead of Bootstrap.
+Flask-Turboduck is a Flask extension for the PeeWee ORM (Object-Relational Mapping). It uses 'Zurb Foundation <http://foundation.zurb.com>'.
 Flask-Turboduck provides a layer of integration between the `flask <http://flask.pocoo.org/>`_
-web framework and the `peewee orm <http://peewee.readthedocs.org/>`_.
+web framework and the `PeeWee orm <http://peewee.readthedocs.org/>`_.
 
 Batteries Included:
 
-* Admin Interface
+* Admin Interface (CRUD options)
 * Authentication
 * Rest API
 
@@ -22,13 +31,7 @@ Requirements:
 * python 2.5 or greater
 
 
-check out the `documentation <http://flask-peewee.readthedocs.org/>`_.
-
-
-** Updating for Flask-Turboduck **
-------------------
-
-
+check out the `documentation <http://flask-turboduck.readthedocs.org/>`_.
 
 Admin Interface
 ---------------
@@ -47,7 +50,7 @@ a way to expose a RESTful interface for your project's models.
 
 ::
 
-    curl localhost:5000/api/user/
+    curl localhost:5000/api/v1/user/
     {
       "meta": {
         "model": "user", 
@@ -107,3 +110,5 @@ http://127.0.0.1:5000/admin/
 you can check out the REST api at the following url:
 
 http://127.0.0.1:5000/api/message/
+
+This project was Forked from Flask-PeeWee @ V.0.6.5.
